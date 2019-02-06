@@ -90,9 +90,14 @@ int eliminar(){
 	return 1;
 }
 void mostrar(){
+	int inicio = frente;
 	system("clear");
 	if(frente == atras) printf("Cola vacia ¬.¬ \n");
 	else
-	for(int i = frente;i<atras;i++)
-		printf("Num: %d Dato: %d \n",i,cola[i]);
+	do{
+		for(int i = frente;i<atras;i++){
+			inicio = (inicio +1)% maximo;
+			printf("Num: %d Dato: %d \n",i,cola[i]);
+		}
+	}while(inicio != atras);
 }
