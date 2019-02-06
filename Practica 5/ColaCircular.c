@@ -49,6 +49,7 @@ int main(int argc, char **argv){
 			
 			case 3:
 				//Mostrar elemento
+				printf("entra\n");
 				mostrar();
 			break;
 			
@@ -81,6 +82,7 @@ int insertar(){
 	}
 	return 1;
 }
+//Eliminar
 int eliminar(){
 	if(frente == atras && bandera == 0) return 0;
 	else{
@@ -89,15 +91,21 @@ int eliminar(){
 	}
 	return 1;
 }
+//Mostrar
 void mostrar(){
-	int inicio = frente;
-	system("clear");
+	printf("entra mos %d : %d\n",frente,atras);
 	if(frente == atras) printf("Cola vacia ¬.¬ \n");
-	else
-	do{
-		for(int i = frente;i<atras;i++){
-			inicio = (inicio +1)% maximo;
-			printf("Num: %d Dato: %d \n",i,cola[i]);
+	else{
+		if(frente > atras){
+			for(int i = frente;i<maximo;i++){
+				printf("Dato: %d \n",cola[i]);
+			}
+			for(int i = 0;i<atras;i++){
+				printf("Dato: %d \n",cola[i]);
+			}
+		}else{
+			for(int i = frente;i<atras;i++)
+			printf("Dato: %d \n",cola[i]);
 		}
-	}while(inicio != atras);
+	}
 }
