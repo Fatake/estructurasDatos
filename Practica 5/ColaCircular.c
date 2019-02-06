@@ -97,4 +97,5 @@ void mostrar(){
 		f = 0;
 		printf("Dato: %d\n",cola[i]);
 	}
+	//
 }
