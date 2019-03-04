@@ -8,8 +8,7 @@ struct dato { // Se define la estructura a trabajr
 
 struct dato *inicio; // Se define el primer elemento
 
-void insertar (char car)
-{
+void insertar (char car){
 	struct dato *temp, *aux;
 	
 	temp = (struct dato *) malloc (sizeof(struct dato));
@@ -33,8 +32,7 @@ void insertar (char car)
 }
 
 
-char eliminar()
-{
+char eliminar(){
 	struct dato *temp;
 	char c;
 	
@@ -46,8 +44,7 @@ char eliminar()
 	return c;
 }
 
-void mostrar()
-{
+void mostrar(){
 	struct dato *temp;
 	
 	temp = inicio;
@@ -61,8 +58,7 @@ void mostrar()
 	  printf ("\n Lista vacía!");
 }
 
-main()
-{
+int main(){
 	int opc;
 	char c;
 	
@@ -91,4 +87,5 @@ main()
 					break;
 		}
 	} while (opc!=4);
+	return 0;
 }
