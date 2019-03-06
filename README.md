@@ -9,12 +9,11 @@ Con propósito de conocer y manejar las estructuras en programación
 
 **Tabla de Conenidos**
 
-[TOCM]
+ [TOCM]
 
+s
 
 [========]
-
-
 
 # Programas
 1. [Practica 1](https://github.com/Fatake/estructurasDatos/tree/master/Practica%201http:// "Practica 1")
