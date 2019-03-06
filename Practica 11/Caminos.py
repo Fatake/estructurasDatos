@@ -45,7 +45,7 @@ def recorridoAnchura():
 	
 
 def recorridoProfundidad():
-	print "Por hacer \n\n"
+	print "\t Recorrido por Profundidad\n\n"
 
 def algoritmoDijkstra():
 	print "Por hacer" 
@@ -67,14 +67,14 @@ def cambiaRelacion():
 def camino():
 	while True:
 		print "\tPrograma Buscador de Caminos Con Algoritmos\n"
-		print ("<-------------------------->")
+		print ("<------------------------------>")
 		print ("Opciones:\n")
 		print ("1) Mostrar Relaciones Por Anchura")
 		print ("2) Mostrar Relaciones Por Profundidad")
 		print ("3) Algoritmo de  Dijkstra")
 		print ("4) Imprimir Matriz")
 		print ("5) Cambiar Relacion")
-		print ("<-------------------------->")
+		print ("<------------------------------>")
 		print ("0) Salir")
 		print ("Selecione una opcion:")
 		opcion = input("->")
