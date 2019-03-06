@@ -1,4 +1,5 @@
 import os
+from collections import deque
 
 
 ##
@@ -14,7 +15,34 @@ def printMatriz():
 		print
 
 def recorridoAnchura():
-	print "Por hacer \n\n"
+	print " \tRecorrido Por Anchura\n\n"
+	#Lista de estado inicicializa en espera
+	# Equivalencias
+	# -1 = espera
+	# 0 = listo
+	# 1 = procesado
+	estado = []
+	for i in range(nodos):
+		estado.append(-1)
+	#Arreglo cola
+	cola = deque(["0"])
+	cola.pop()
+	aux = deque(["0"])
+	aux.pop()
+	for i in range(nodos):
+		if (estado[i] == -1):#si estado es espera
+			cola.append(str(i+1))
+			estado[i] = 0 #Listo
+			while(cola != aux):
+				print cola.popleft()+"-",
+				estado[i] = 1
+				for j in range(nodos):
+					if (matriz[i][j] == 1):#Si existe la relacion
+						if (estado[j] == -1):#Si esta en espera
+							cola.append(str(j+1))
+							estado[j] = 0 #Listo
+	print 
+	
 
 def recorridoProfundidad():
 	print "Por hacer \n\n"
