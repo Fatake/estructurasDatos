@@ -122,7 +122,6 @@ def camino():
 		print ("Opciones:\n")
 		print ("1) Mostrar Relaciones Por Anchura")
 		print ("2) Mostrar Relaciones Por Profundidad")
-		print ("3) Algoritmo de  Dijkstra")
 		print ("4) Imprimir Matriz")
 		print ("5) Cambiar Relacion")
 		print ("<------------------------------>")
@@ -138,7 +137,7 @@ def camino():
 			recorridoProfundidad()
 		elif opcion == 3:
 			##Camino de Dijkstra
-			Dijkstra()
+			print 
 		elif opcion == 4:
 			##Imprime Matriz
 			printMatriz()
