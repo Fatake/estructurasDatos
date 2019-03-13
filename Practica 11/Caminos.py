@@ -54,79 +54,30 @@ def recorridoProfundidad():
 	for i in range(nodos):
 		estado.append(-1)
 	#Arreglo cola
-	cola = deque(["0"])
+	pila = deque(["0"])
 	aux = deque(["0"])
-	cola.pop()
+	pila.pop()
 	aux.pop()
 	##Para todos los nodos
 	for i in range(nodos):
 		if (estado[i] == -1):#si estado es espera
-			cola.append(str(i+1))
+			
+			pila.append(str(i+1))
 			estado[i] = 0 #Listo
-			while(cola != aux):#Si la cola no esta vacia
-				node = int(cola.pop())-1
-				print str(node+1)+"-",
-				estado[node] = 1
+			
+			while(pila != aux):#Mientras la pila no este vacia}
+				#print pila
+				node = int(pila.pop())-1
+				if(estado[node] != 1):
+					print str(node + 1)+"-",
+					estado[node] = 1 #Estado a procesado
+					
 				for j in range(nodos):
-					if (matriz[i][j] == 1):#Si existe la relacion
-						if (estado[j] == -1):#Si esta en espera
-							cola.append(str(j+1))
+					if (matriz[node][j] == 1):#Si existe la relacion
+						if (estado[j] == -1 or estado[j] == 0):#Si esta en espera o listo
+							pila.append(str(j+1))
 							estado[j] = 0 #Listo
-
-def Dijkstra():
-	v = []
-	for i in range(nodos):
-		v.append(i)
-	print v
-	s = []
-	d = []
-	p = []
-	
-	aux = []
-	print "\t Algoritmo de Dijkstra\n\n"
-	while (True):
-		print "Ingrese el nodo inicial"
-		inicio = input("->")
-		if inicio <= nodos and inicio > 0:
-			break
-	inicio = inicio -1
-	
-	for i in range(nodos):
-		p.append(inicio)
-	aux = v
-	s.append(inicio)
-	##Llenar d con costos de esa fila
-	for i in range(nodos):
-		if matrizCostos[inicio][i] != 999999:
-			d.append(matrizCostos[inicio][i])
-	nodoMinimo = 50
-	print aux
-	print str(len(aux))
-	print s
-	print str(len(s))
-	print d
-	##inicio de algoritmo
-	for i in range(nodos-1):
-		for x in range(len(s)):
-			if s[x] in aux:
-				aux.remove(s[x])
-		#Busca el minimo de w 
-		for j in range(len(d)):
-			if j+1 in aux and d[j] < nodoMinimo :
-				nodoMinimo = d[j]
-		print nodoMinimo
-		#Agregar el minimo 
-		s.append(nodoMinimo)
-		for x in range(len(s)):
-			if s[x] in aux:
-				aux.remove(s[x])
-		for j in range(len(aux)):
-			if d[nodoMinimo] + matrizCostos[nodoMinimo][aux[j]] < d[aux[j]]:
-				p[aux[j]] = nodoMinimo
-				d[aux[j]] = d[nodoMinimo] + matrizCostos[nodoMinimo][aux[j]]
-	
-	print p.reverse()
-	print d.reverse()
+	print "\n"
 
 ##
 #Permite modificar la matriz de relacion
@@ -149,8 +100,8 @@ def camino():
 		print ("Opciones:\n")
 		print ("1) Mostrar Relaciones Por Anchura")
 		print ("2) Mostrar Relaciones Por Profundidad")
-		print ("4) Imprimir Matriz")
-		print ("5) Cambiar Relacion")
+		print ("3) Imprimir Matriz")
+		print ("4) Cambiar Relacion")
 		print ("<------------------------------>")
 		print ("0) Salir")
 		print ("Selecione una opcion:")
@@ -163,12 +114,9 @@ def camino():
 			##Recorrido de Profundidad
 			recorridoProfundidad()
 		elif opcion == 3:
-			##Camino de Dijkstra
-			print 
-		elif opcion == 4:
 			##Imprime Matriz
 			printMatriz()
-		elif opcion == 5:
+		elif opcion == 4:
 			##Cambia Relacion
 			cambiaRelacion()
 		elif opcion == 0:
@@ -208,13 +156,6 @@ for i in range(nodos):
 		print "Existe relacion entre el Vertice "+str(i+1)+" con "+str(j+1)
 		print "1) si y 0) no" 
 		matriz[i][j] = input("->")
-		if matriz[i][j] >= 1:
-			matriz[i][j] = 1
-			print "Ingrese el costo de la relacion\n"
-			matrizCostos[i][j] = input("->")
-		else:
-			matriz[i][j] = 0
-			matrizCostos[i][j] = 999999
 		os.system('clear')
 
 ##
