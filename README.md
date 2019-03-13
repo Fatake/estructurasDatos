@@ -28,7 +28,7 @@ Con propósito de conocer y manejar las Estructuras de Datos computacionales
 12. [Practica 12](https://github.com/Fatake/estructurasDatos/tree/master/Practica%2012 "Practica 12")
 13. [Practica 13](https://github.com/Fatake/estructurasDatos/tree/master/Practica%2013 "Practica 13s")
 
-#Contendio de programas
+# Contendio de programas
 1. Bases de datos
 2. Polinomio de direccionamiento
 3. Polinomio de direccionamiento
