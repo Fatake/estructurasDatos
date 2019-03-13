@@ -1,7 +1,9 @@
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Scanner;
-
+/**
+ * Clase Kruskal
+ */
 public class Kruskal {
 
 	static final int MAX = 1005;  //maximo numero de vertices
