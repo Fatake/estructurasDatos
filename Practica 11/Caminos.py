@@ -57,7 +57,7 @@ def recorridoProfundidad():
 	pila = deque(["0"])
 	aux = deque(["0"])
 	pila.pop()
-	aux.pop()
+	aux.pop() ##Compara con una lista null
 	##Para todos los nodos
 	for i in range(nodos):
 		if (estado[i] == -1):#si estado es espera
