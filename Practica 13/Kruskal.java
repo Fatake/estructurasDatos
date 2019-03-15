@@ -87,7 +87,8 @@ public class Kruskal {
 	}
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner( System.in );os
+		Scanner sc = new Scanner( System.in );
+		System.out.print("Hola Carro");
 		System.out.print( "Total De Vertices :");
 		V = sc.nextInt();
 		System.out.print( "Total De Aristas :");
