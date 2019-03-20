@@ -39,7 +39,11 @@ Con propósito de conocer y manejar las Estructuras de Datos computacionales
 9. Inserccion ordenada
 10. Teoria de Grafos
 11. Caminos de Grafos
+	11.1 Por Anchura
+	11.2 Por Profundidad
 12. Algoritmo de Dijkstra
-13. Algoritmos de Arboles Cubridores
+13. Algoritmos de Arboles Recubridores
+	13.1. Prim
+	13.2. Kruskal
 
 # [Teoria](https://github.com/Fatake/estructurasDatos/tree/master/Teoria)
