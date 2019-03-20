@@ -5,44 +5,37 @@ from collections import deque
 #Funciones
 ##
 def Prim():
-	vertices = []
+	vertices = {0}
 	##T
 	temporal = []
-	##V-U
-	verMenosU = []
 	##U
-	conjU = []
+	conjU = {0}
+	##
 	costoAux = 999
 	u = 1
 	v = 1
 	for i in range(nodos):
-		vertices.append(i)
-	##Iniciar el 1
-	conjU.append(0)
+		vertices.update({i})
 	##Inicio de Algoritmo
-	while(conjU != vertices ):
+	while(conjU != vertices):
 		#V-u
-		for i in vertices:
-			for j in conjU:
-				if(vertices[i] != conjU[j]):
-					verMenosU.append(i)
-		print conjU
-		print vertices
-		print verMenosU
+		verMenosU = vertices.difference(conjU)
 		#Arista de costo Minimo
-		for i in vertices:
-			print i
+		for i in conjU:
 			for j in verMenosU:
-				print j
-				u = i
-				v = j
-				if (matrizCostos[u][v] < costoAux):
+				if (matrizCostos[i][j] < costoAux):
+					u = i
+					v = j
 					costoAux = matrizCostos[u][v]
-					print True
-		temporal.append([u,v])
-		conjU.append(v)
-		print temporal
-		a = input()
+
+		temporal.append([u+1,v+1])
+		conjU.update({v})
+		costoAux = 999
+		
+	print ("\tPrim\n")
+	print ("El arbol recubridor es: "),
+	print temporal
+	
 
 ##Imprime Matriz de Relacion
 def printMatriz():
