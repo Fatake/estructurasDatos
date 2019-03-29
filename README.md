@@ -27,7 +27,7 @@ Con propósito de conocer y manejar las Estructuras de Datos computacionales
 11. [Practica 11](https://github.com/Fatake/estructurasDatos/tree/master/Practica%2011 "Practica 11")
 12. [Practica 12](https://github.com/Fatake/estructurasDatos/tree/master/Practica%2012 "Practica 12")
 13. [Practica 13](https://github.com/Fatake/estructurasDatos/tree/master/Practica%2013 "Practica 13s")
-13. [Practica 13](https://github.com/Fatake/estructurasDatos/tree/master/Practica%2014 "Practica 14")
+14. [Practica 13](https://github.com/Fatake/estructurasDatos/tree/master/Practica%2014 "Practica 14")
 
 # Contendio de programas
 1. Bases de datos
@@ -44,8 +44,8 @@ Con propósito de conocer y manejar las Estructuras de Datos computacionales
 	11.2 Por Profundidad
 12. Algoritmo de Dijkstra
 13. Algoritmos de Arboles Recubridores
-13.1. Prim
-13.2. Kruskal
+	13.1. Prim
+	13.2. Kruskal
 14. Arboles
 
 # [Teoria](https://github.com/Fatake/estructurasDatos/tree/master/Teoria)
