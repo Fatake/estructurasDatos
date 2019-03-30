@@ -2,7 +2,7 @@ from Arbol import *
 import os
 ##Main
 arbol = Arbol()
-os.system('cls')
+os.system('clear')
 while True:
 	print ("\tPrograma de Arboles\n")
 	print ("-----------------------")
@@ -19,9 +19,12 @@ while True:
 			break;
 		except ValueError:
 			print("Opcion Incorrecta\n")
+		except NameError:
+			print("Opcion Incorrecta\n")
+		except SyntaxError:
+			print("Opcion Incorrecta\n")
 
-	#os.system('clear')
-	os.system('cls')
+	os.system('clear')
 	if opcion == 1:
 		print ("Ingrese Un Dato")
 		while True:
@@ -29,6 +32,10 @@ while True:
 				dato = int(input("->"))
 				break;
 			except ValueError:
+				print("Solo admitimos Numeros Enteros")
+			except NameError:
+				print("Solo admitimos Numeros Enteros")
+			except SyntaxError:
 				print("Solo admitimos Numeros Enteros")
 
 		arbol.insertar(dato)
