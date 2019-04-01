@@ -16,7 +16,7 @@ class Arbol():
 			print ("No a Creado un arbol")
 
 	def imprimirPreOrden(self):
-		if self.__raiz != None:
+		if (self.__raiz != None):
 			self.__raiz.mostrarPreOrden()
 		else:
 			print ("No a Creado un arbol")
@@ -27,18 +27,18 @@ class Arbol():
 			raiz = NodoBinario(dato)
 		##Para Arboles Ordenados
 		elif (dato < raiz.getDato()):
-			raiz.setLeft() = self.__insertarRec(dato,raiz.getLeft())
+			raiz.setLeft(self.__insertarRec(dato,raiz.getLeft()))
 		elif (dato > raiz.getDato()):
-			raiz.setRight() = self.__insertarRec(dato,raiz.getRight())
+			raiz.setRight(self.__insertarRec(dato,raiz.getRight()))
 		return raiz
 
 	def insertar(self,dato):
-		if (self.raiz == None):
-			self.raiz = NodoBinario(dato)
-		elif (dato < self.raiz.getDato()):
-			self.raiz.setLeft() = self.__insertarRec(dato,self.raiz.getLeft())
-		elif (dato > self.raiz.getDato()):
-			self.raiz.setRight() = self.__insertarRec(dato,self.raiz.getRight())
+		if (self.__raiz == None):
+			self.__raiz = NodoBinario(dato)
+		elif (dato < self.__raiz.getDato()):
+			self.__raiz.setLeft(self.__insertarRec(dato,self.__raiz.getLeft()))
+		elif (dato > self.__raiz.getDato()):
+			self.__raiz.setRight(self.__insertarRec(dato,self.__raiz.getRight()))
 
 	def eliminar(self,dato):
 		self.__eliminarRec(dato,self.__raiz)
