@@ -34,17 +34,20 @@ public class Arbol{
 	/*
 	 * Metodo Recursivo
 	 */
-	private void insertarRec(int dato, NodoBinario raiz){
+	private NodoBinario insertarRec(int dato, NodoBinario raiz){
 		//Compara con Sub arboles
-		if (raiz == null) //No existe el arbol
+		if (raiz == null){ //No existe el arbol
 			raiz = new NodoBinario(dato);
-			//raiz.mostrarEnOrden();
+			raiz.mostrarEnOrden();
+		}
 
 		//Para Arboles Ordenados
 		else if (dato < raiz.getDato())
-			insertarRec(dato,raiz.getLeft());
+			raiz = insertarRec(dato,raiz.getLeft());
 		else if (dato > raiz.getDato())
-			insertarRec(dato,raiz.getRight());
+			raiz = insertarRec(dato,raiz.getRight());
+		
+		return raiz;
 	}
 
 	public void insertar(int dato){

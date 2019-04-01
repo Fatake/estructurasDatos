@@ -2,7 +2,7 @@
 class Arbol():
 	def __init__(self):
 		self.__raiz = None
-	
+
 	def imprimirEnOrden(self):
 		if self.__raiz != None:
 			self.__raiz.mostrarEnOrden()

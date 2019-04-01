@@ -1,4 +1,7 @@
 class NodoBinario():
+	##
+	#Constructor
+	##
 	def __init__(self,dato):
 		self.__dato = dato
 		self.__left = None
@@ -6,19 +9,22 @@ class NodoBinario():
 
 	def getDato(self):
 		return self.__dato
-	
+
 	def getLeft(self):
 		return self.__left
-	
+
 	def getRight(self):
 		return self.__right
-	
+
 	def setLeft(self,where):
 		self.__left = where
-		
+
 	def setRight(self,where):
 		self.__right = where
 
+	##
+	#Mostrar en Pre Orden
+	##
 	def mostrarPreOrden(self):
 		print (self.getDato())
 		if (self.__left != None):
