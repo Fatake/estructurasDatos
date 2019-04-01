@@ -25,16 +25,20 @@ class Arbol():
 		##Compara con Sub arboles
 		if (raiz == None): #No existe el arbol
 			raiz = NodoBinario(dato)
-			raiz.mostrarEnOrden()
 		##Para Arboles Ordenados
 		elif (dato < raiz.getDato()):
-			raiz = self.__insertarRec(dato,raiz.getLeft())
+			raiz.setLeft() = self.__insertarRec(dato,raiz.getLeft())
 		elif (dato > raiz.getDato()):
-			raiz = self.__insertarRec(dato,raiz.getRight())
+			raiz.setRight() = self.__insertarRec(dato,raiz.getRight())
 		return raiz
 
 	def insertar(self,dato):
-		self.__raiz = self.__insertarRec(dato,self.__raiz)
+		if (self.raiz == None):
+			self.raiz = NodoBinario(dato)
+		elif (dato < self.raiz.getDato()):
+			self.raiz.setLeft() = self.__insertarRec(dato,self.raiz.getLeft())
+		elif (dato > self.raiz.getDato()):
+			self.raiz.setRight() = self.__insertarRec(dato,self.raiz.getRight())
 
 	def eliminar(self,dato):
 		self.__eliminarRec(dato,self.__raiz)
