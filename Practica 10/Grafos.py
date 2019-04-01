@@ -1,6 +1,4 @@
 import os
-
-
 ##
 #Funciones
 ##
@@ -32,7 +30,7 @@ def buscaCamino():
 			print "No existe El Vertice "+str(nodoFinal)
 		else:
 			break
-		
+
 	nodoInicial = nodoInicial - 1
 	nodoFinal = nodoFinal -1 
 	print "Aristas a buscar "+str(nodoInicial+1)+" y "+str(nodoFinal+1)
@@ -40,7 +38,7 @@ def buscaCamino():
 	if matriz[nodoInicial][nodoFinal] == 1:
 		print "Si existe un cambino"
 		return True;
-	
+
 	##
 	##buscando caminos de mas aristas
 	aux = matriz
@@ -49,7 +47,7 @@ def buscaCamino():
 	aux3 = []
 	for i in range(nodos):
 		aux3.append([0]*nodos)
-	
+
 	for n in range(nodos-1):#n -1 de caminos
 		for i  in range(nodos):#filas
 			for k in range(nodos):#Columnas
@@ -65,8 +63,7 @@ def buscaCamino():
 			return True;
 		aux = aux2
 		aux2 = aux3
-	
-	print "No existe un camino"
+	print ("No existe un camino")
 
 #Permite modificar la matriz de relacion
 #
@@ -77,7 +74,7 @@ def cambiaRelacion():
 			print "1) si y 0) no" 
 			matriz[i][j] = input("->")
 			os.system('clear')
-			
+
 #
 #Menu Principal
 #
