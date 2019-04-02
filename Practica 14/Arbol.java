@@ -3,11 +3,19 @@ public class Arbol{
 	private NodoBinario raiz;
 
 	/**
-	 * Constructor
+	 * Constructores
 	 */
 	public Arbol(){
 		raiz = null;
 	}
+	public Arbol(int dato){
+		this.raiz = new NodoBinario(dato);
+	}
+
+	public Arbol(NodoBinario raiz ){
+		this.raiz = raiz;
+	}
+
 
 	//Metodos
 	public void imprimirEnOrden(){
@@ -31,8 +39,16 @@ public class Arbol{
 			System.out.println("No a Creado un arbol :(");
 	}
 
+	public void insertar(int dato){
+		insertarRec(dato,this.raiz);
+	}
+
+	public void eliminar(int dato){
+		eliminarRec(dato,this.raiz);
+	}
+
 	/*
-	 * Metodo Recursivo
+	 * Metodos Recursivo
 	 */
 	private NodoBinario insertarRec(int dato, NodoBinario raiz){
 		//Compara con Sub arboles
@@ -48,14 +64,6 @@ public class Arbol{
 			raiz = insertarRec(dato,raiz.getRight());
 		
 		return raiz;
-	}
-
-	public void insertar(int dato){
-		insertarRec(dato,this.raiz);
-	}
-
-	public void eliminar(int dato){
-		eliminarRec(dato,this.raiz);
 	}
 
 	private void eliminarRec(int dato, NodoBinario raiz){

@@ -40,31 +40,86 @@ class Arbol():
 		elif (dato > self.__raiz.getDato()):
 			self.__raiz.setRight(self.__insertarRec(dato,self.__raiz.getRight()))
 
-	def eliminar(self,dato):
-		self.__eliminarRec(dato,self.__raiz)
+	def eliminarNodo(self,nodo):
+		tieneNodoIzquierda = False
+		tieneNodoDerecha = False
+		# saber si tiene hijos en la izquierdo y derecha
+		if (nodo.getRight() != null):
+			tieneNodoDerecha = True
+		if (nodo.getLeft() != null):
+			tieneNodoIzquierda = True
 
-	def __eliminarRec(self,dato,raiz):
-		pass
-		"""
-		Caso 1
-			No existe el dato
-		Caso 2
-			Dato a eliminar no tiene hijos
-				eliminar(dato)
-				Liberar Memoria
-				Padre de ese Hijo apuntara a nulo
-			Caso Particular si la raiz no tiene Hijos
-				Raiz = Nulo
-		Caso 3
-			Dato a eliminar tiene un Hijo
-				eliminar (Dato)
-				Nieto pasa a ser Hijo
-				Liberar Memoria
-		Caso 4
-			Dato a Eliminar tiene 2 Hijos
-			eliminar (Dato)
-			Buscar el menor de los mayores
-			Buscar e mayor de los menore
-			Dependiendo de la eleccion el nodo pasa a ser el padre
-			Liberar Memoria
-		"""
+		#Caso 1: No tiene hijos 
+		if (not tieneNodoDerecha and not tieneNodoIzquierda):
+			return eliminarCaso1(nodo)
+	 
+		#Caso 2: Tiene un hijo y el otro no 
+		elif (tieneNodoDerecha and not tieneNodoIzquierda):
+			return eliminarCaso2(nodo)
+
+		elif(not tieneNodoDerecha and tieneNodoIzquierda):
+			return eliminarCaso2(nodo)
+	 
+		#Caso 3: Tiene ambos hijos
+		elif (tieneNodoDerecha and tieneNodoIzquierda):
+			return eliminarCaso3(nodo)
+		#Si no existe ningun nodo entonces
+		return False
+
+	def eliminarCaso1(self,nodo):
+		hijoIzquierdo = nodo.getPadre().getLeft()
+		hijoDerecho = nodo.getPadre().getRight()
+
+		if ( hijoIzquierdo == nodo ):
+			nodo.getPadre().setLeft(None)
+			return True
+
+		elif ( hijoDerecho == nodo):
+			nodo.getPadre().setRight(None)
+			return True
+		#si no
+		return False
+ 
+	def eliminarCaso2(self,nodo):
+		#Cuando tiene subArboles
+		hijoIzquierdo = nodo.getPadre().getLeft()
+		hijoDerecho = nodo.getPadre().getRight()
+
+		hijoActual = nodo.getLeft()
+		if (hijoActual == None):
+			hijoActual = nodo.getRight();
+
+		if (hijoIzquierdo == nodo ):
+			nodo.getPadre().setLeft(hijoActual)
+			#Eliminando todas las referencias hacia el nodo
+			hijoActual.setPadre(nodo.getPadre())
+			nodo.setRight(None)
+			nodo.setLeft(None)
+			return True
+
+		if (hijoDerecho == nodo):
+			nodo.getPadre().setRight(hijoActual)
+			hijoActual.setPadre(nodo.getPadre())
+			nodo.setRight(None)
+			nodo.setLeft(None)
+			return True
+		#si no
+		return False
+
+	def eliminarCaso3(self,nodo):
+		# Tomar el hijo derecho del Nodo que queremos eliminar
+		nodoMasALaIzquierda = self.__recorrerIzquierda(nodo.getRight())
+		if ( nodoMasALaIzquierda != None ):
+			#Reemplazamos el valor del nodo
+			#que queremos eliminar por el nodo que encontramos 
+			nodo.setDato(nodoMasALaIzquierda.getDato())
+			#Eliminar este nodo de las formas que conocemos ( caso 1, caso 2 ) 
+			eliminarNodo( nodoMasALaIzquierda)
+			return True
+		#Si no
+		return False
+
+	def __recorrerIzquierda(self,nodo):
+		if (nodo.getLeft() != None):
+			return recorrerIzquierda(nodo.getLeft())
+		return nodo

@@ -1,5 +1,7 @@
 public class NodoBinario{
 	private int dato;
+	
+	private NodoBinario padre;
 	private NodoBinario left;
 	private NodoBinario right;
 	/**
@@ -8,11 +10,13 @@ public class NodoBinario{
 	 
 	public NodoBinario(){
 		dato = 0;
+		padre = null;
 		left = null;
 		right = null;
 	}
 	public NodoBinario(int dato){
 		this.dato = dato;
+		padre = new NodoBinario();
 		left = new NodoBinario();
 		right = new NodoBinario();
 	}
@@ -24,12 +28,23 @@ public class NodoBinario{
 		return dato;
 	}
 
+	public NodoBinario getPadre(){
+		return padre;
+	}
+
 	public NodoBinario getLeft(){
 		return left;
 	}
 
 	public NodoBinario getRight(){
 		return right;
+	}
+
+	/**
+	 * Sets
+	 */
+	public void setPadre(NodoBinario padre) {
+		this.padre = padre;
 	}
 
 	public void setLeft(NodoBinario left){

@@ -4,17 +4,33 @@ class NodoBinario():
 	##
 	def __init__(self,dato):
 		self.__dato = dato
+		self.__padre = None
 		self.__left = None
 		self.__right = None
 
+	##
+	#Gets
+	##
 	def getDato(self):
 		return self.__dato
+
+	def getPadre(self):
+		return self.__padre
 
 	def getLeft(self):
 		return self.__left
 
 	def getRight(self):
 		return self.__right
+
+	##
+	#Sets
+	##
+	def setDato(self,where):
+		self.__dato = where
+
+	def setPadre(self,where):
+		self.__padre = where
 
 	def setLeft(self,where):
 		self.__left = where
