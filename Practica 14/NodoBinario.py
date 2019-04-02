@@ -39,7 +39,7 @@ class NodoBinario():
 		self.__right = where
 
 	##
-	#Mostrar en Pre Orden
+	#Funciones
 	##
 	def mostrarPreOrden(self):
 		print (self.getDato())
@@ -61,3 +61,20 @@ class NodoBinario():
 		if(self.__right != None):
 			self.__right.mostrarPosOrden()
 		print (self.getDato())
+
+	def buscarNumero(self,numero):
+		return self.__RecBuscarNumero(numero)
+
+	def __RecBuscarNumero(self,numero):
+		guardar = None
+		if(self.__left != None):
+			if(self.__left.getDato() != numero):
+				guardar = self.__left.buscarNumero(numero)
+			else:
+				return self.__left
+		if(self.__right != None):
+			if(self.__right.getDato() != numero):
+				guardar = self.__right.buscarNumero(numero)
+			else:
+				return self.__right
+		return guardar

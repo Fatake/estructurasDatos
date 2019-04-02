@@ -40,7 +40,22 @@ while True:
 
 		arbol.insertar(dato)
 	elif opcion == 2:
-		print ("Por hacer...\n")
+		print ("\t Eliminar Nodos")
+		if (arbol.imprimirEnOrden()):
+			print ("Ingrese Un Numero a eliminar\n")
+			while True:
+				try:
+					numero = int(input("->"))
+					break;
+				except ValueError:
+					print("No existe ese numero\n")
+				except NameError:
+					print("No existe ese numero\n")
+				except SyntaxError:
+					print("No existe ese numero\n")
+			arbol.eliminarNodo(arbol.buscar(numero))
+		else:
+			print (":(")
 	elif opcion == 3:
 		arbol.imprimirEnOrden()
 	elif opcion == 4:

@@ -3,23 +3,32 @@ class Arbol():
 	def __init__(self):
 		self.__raiz = None
 
+	def buscar(self,numero):
+		return self.__raiz.buscarNumero(numero)
+
 	def imprimirEnOrden(self):
 		if self.__raiz != None:
 			self.__raiz.mostrarEnOrden()
+			return True
 		else:
 			print ("No a Creado un arbol")
+		return False
 
 	def imprimirPosOrden(self):
 		if self.__raiz != None:
 			self.__raiz.mostrarPosOrden()
+			return True
 		else:
 			print ("No a Creado un arbol")
+		return False
 
 	def imprimirPreOrden(self):
 		if (self.__raiz != None):
 			self.__raiz.mostrarPreOrden()
+			return True
 		else:
 			print ("No a Creado un arbol")
+		return False
 
 	def __insertarRec(self,dato,raiz):
 		##Compara con Sub arboles
@@ -44,9 +53,9 @@ class Arbol():
 		tieneNodoIzquierda = False
 		tieneNodoDerecha = False
 		# saber si tiene hijos en la izquierdo y derecha
-		if (nodo.getRight() != null):
+		if (nodo.getRight() != None):
 			tieneNodoDerecha = True
-		if (nodo.getLeft() != null):
+		if (nodo.getLeft() != None):
 			tieneNodoIzquierda = True
 
 		#Caso 1: No tiene hijos 
