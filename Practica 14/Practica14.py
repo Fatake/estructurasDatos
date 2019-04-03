@@ -1,4 +1,5 @@
 from Arbol import *
+from NodoBinario import *
 import os
 ##Main
 arbol = Arbol()
@@ -53,7 +54,7 @@ while True:
 					print("No existe ese numero\n")
 				except SyntaxError:
 					print("No existe ese numero\n")
-			arbol.eliminarNodo(arbol.buscar(numero))
+			arbol.eliminar(numero)
 		else:
 			print (":(")
 	elif opcion == 3:
