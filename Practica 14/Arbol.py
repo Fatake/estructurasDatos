@@ -31,7 +31,7 @@ class Arbol():
 		return False
 
 	def __insertarRec(self,dato,raiz):
-		##Compara con Sub arboles
+		#Compara con Sub arboles
 		if (raiz == None): #No existe el arbol
 			raiz = NodoBinario(dato)
 		##Para Arboles Ordenados
