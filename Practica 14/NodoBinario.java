@@ -1,31 +1,22 @@
-public class NodoBinario{
-	private int dato;
-	
+public class NodoBinarioBinario{
+
+	private int valor;
 	private NodoBinario padre;
 	private NodoBinario left;
 	private NodoBinario right;
+
 	/**
-	 * Constructores
+	 * Constructor
 	 */
-	 
-	public NodoBinario(){
-		dato = 0;
-		padre = null;
-		left = null;
-		right = null;
-	}
-	public NodoBinario(int dato){
-		this.dato = dato;
-		padre = new NodoBinario();
-		left = new NodoBinario();
-		right = new NodoBinario();
+	public NodoBinario(int valor) {
+		this.valor = valor;
 	}
 
 	/**
 	 * Gets
 	 */
-	public int getDato(){
-		return dato;
+	public int getValor(){
+		return valor;
 	}
 
 	public NodoBinario getPadre(){
@@ -43,7 +34,11 @@ public class NodoBinario{
 	/**
 	 * Sets
 	 */
-	public void setPadre(NodoBinario padre) {
+	public void setValor(int valor){
+		this.valor = valor;
+	}
+
+	public void setPadre(NodoBinario padre){
 		this.padre = padre;
 	}
 
@@ -55,32 +50,4 @@ public class NodoBinario{
 		this.right = right;
 	}
 
-	/**
-	 * Mostrar en Pre Orden
-	 */
-	public void mostrarPreOrden(){
-		System.out.println(getDato());
-
-		if (left != null) left.mostrarPreOrden();
-		if (right != null) right.mostrarPreOrden();
-	}
-
-	/**
-	 * Mostrar en Orden
-	 */
-	public void mostrarEnOrden(){
-		if (left != null) left.mostrarEnOrden();
-
-		System.out.println(getDato());
-		if (right != null) right.mostrarEnOrden();
-	}
-
-	/**
-	 * Mostrar en Pos Orden
-	 */
-	public void mostrarPosOrden(){
-		if (left != null) left.mostrarPosOrden();
-		if (right != null) right.mostrarPosOrden();
-		System.out.println(getDato());
-	}
 }
