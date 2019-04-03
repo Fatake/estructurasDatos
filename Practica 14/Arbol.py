@@ -61,58 +61,6 @@ class Arbol():
 					return self.__buscarRec(raiz.getLeft(),numero)
 		return None
 
-	def __recorrerIzquierda(self,nodo):
-		if (nodo.getLeft() != None):
-			return recorrerIzquierda(nodo.getLeft())
-		return nodo
-
-	def eliminarCaso3(self,nodo):
-		# Tomar el hijo derecho del Nodo que queremos eliminar
-		nodoMasALaIzquierda = self.__recorrerIzquierda(nodo.getRight())
-		if ( nodoMasALaIzquierda != None ):
-			#Reemplazamos el valor del nodo
-			#que queremos eliminar por el nodo que encontramos 
-			nodo.setDato(nodoMasALaIzquierda.getDato())
-			#Eliminar este nodo de las formas que conocemos ( caso 1, caso 2 ) 
-			self.__eliminarNodo(nodoMasALaIzquierda)
-			return True
-		#Si no
-		return False
-
-	def __eliminarNodo(self,nodo):
-		print nodo.getDato()
-		tieneNodoIzquierda = False
-		tieneNodoDerecha = False
-		# saber si tiene hijos en la izquierdo y derecha
-		if (nodo.getRight() != None):
-			tieneNodoDerecha = True
-		if (nodo.getLeft() != None):
-			tieneNodoIzquierda = True
-		print tieneNodoIzquierda
-		print tieneNodoDerecha
-
-		#Caso 1: No tiene hijos 
-		if (not tieneNodoDerecha and not tieneNodoIzquierda):
-			print "Entra Caso 1"
-			nodo = None
-			print nodo
- 
-		#Caso 2: Tiene un hijo y el otro no 
-		elif (tieneNodoDerecha and not tieneNodoIzquierda):
-			print "Entra Caso 2 Derecha"
-			nodo = nodo.getRight()
-			print nodo.getDato()
-
-		elif(not tieneNodoDerecha and tieneNodoIzquierda):
-			print "Entra Caso 2 Izquierda"
-			nodo = nodo.getLeft()
-			print nodo.getDato()
-
-		#Caso 3: Tiene ambos hijos
-		elif (tieneNodoDerecha and tieneNodoIzquierda):
-			print "Entra Caso 3 Recursivo\n"
-			return self.eliminarCaso3(nodo)
-
 	def eliminar(self,numero):
 		if(self.raiz == None):
 			print ("No Existe un Arbol Creado")
@@ -126,6 +74,8 @@ class Arbol():
 
 		else:
 			if(self.__buscar(numero) != None):
-				self.__eliminarNodo(self.__buscar(numero))
+				self.raiz.delete(numero)
 			else:
 				print("No existe ese valor -_-\n")
+
+
