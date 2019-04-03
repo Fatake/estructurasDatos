@@ -4,6 +4,7 @@ class NodoBinario():
 	##
 	def __init__(self,dato):
 		self.__dato = dato
+		self.__padre = None
 		self.__left = None
 		self.__right = None
 
@@ -12,6 +13,9 @@ class NodoBinario():
 	##
 	def getDato(self):
 		return self.__dato
+
+	def getPadre(sef):
+		return self.__padre
 
 	def getLeft(self):
 		return self.__left
@@ -24,6 +28,9 @@ class NodoBinario():
 	##
 	def setDato(self,where):
 		self.__dato = where
+
+	def setPadre(self,where):
+		self.__padre = where
 
 	def setLeft(self,where):
 		self.__left = where

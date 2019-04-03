@@ -1,4 +1,4 @@
-public class NodoBinarioBinario{
+public class NodoBinario{
 
 	private int valor;
 	private NodoBinario padre;
@@ -50,4 +50,30 @@ public class NodoBinarioBinario{
 		this.right = right;
 	}
 
+	/**
+	 * Funciones
+	 */
+	public void mostrarPreOrden(){
+		System.out.println (getValor());
+		if (left != null)
+			left.mostrarPreOrden();
+		if(right != null)
+			right.mostrarPreOrden();
+	}
+
+	public void mostrarEnOrden(){
+		if(left != null)
+			left.mostrarEnOrden();
+		System.out.println (getValor());
+		if(right != null)
+			right.mostrarEnOrden();
+	}
+
+	public void mostrarPosOrden(){
+		if(left != null)
+			left.mostrarPosOrden();
+		if(right != null)
+			right.mostrarPosOrden();
+		System.out.println (getValor());
+	}
 }
