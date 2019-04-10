@@ -1,18 +1,17 @@
 from Arbol import *
-from NodoBinario import *
 import os
 ##Main
 arbol = Arbol()
 os.system('clear')
 while True:
-	print ("\tPrograma de Arboles\n")
-	print ("-----------------------")
+	print ("\tPrograma Arbles AVL\n")
+	print ("<----------------------->\n")
 	print ("1) Agregar Datos")
-	print ("2) Eliminar Datos")
+	print ("2) Eliminar Datos\n")
 	print ("3) Mostrar por Orden")
 	print ("4) Mostrar Pos Orden")
 	print ("5) Mostrar Pre Orden")
-	print ("-----------------------")
+	print ("\n<----------------------->")
 	print ("0) Salir")
 	while True:
 		try:

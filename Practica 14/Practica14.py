@@ -1,5 +1,4 @@
 from Arbol import *
-from NodoBinario import *
 import os
 ##Main
 arbol = Arbol()
