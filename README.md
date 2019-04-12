@@ -1,9 +1,9 @@
-# Programas de Estructuras de Datos
+﻿# Programas de Estructuras de Datos
 
 Listado de programas creados Los lenguajes de **Java**,**C** y **Python**
 
 Con propósito de conocer y manejar las Estructuras de Datos computacionales
-
+-
 
 --------------
 
