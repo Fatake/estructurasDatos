@@ -28,7 +28,7 @@ Con propósito de conocer y manejar las Estructuras de Datos computacionales
 12. [Practica 12](https://github.com/Fatake/estructurasDatos/tree/master/Practica%2012 "Practica 12")
 13. [Practica 13](https://github.com/Fatake/estructurasDatos/tree/master/Practica%2013 "Practica 13s")
 14. [Practica 14](https://github.com/Fatake/estructurasDatos/tree/master/Practica%2014 "Practica 14")
-15. [Practica 14](https://github.com/Fatake/estructurasDatos)
+15. [Practica 15](https://github.com/Fatake/estructurasDatos/tree/master/Practica%2015 "Practica 15")
 
 # Contendio de programas
 1. Bases de datos
@@ -48,5 +48,5 @@ Con propósito de conocer y manejar las Estructuras de Datos computacionales
 	13.1 Prim
 	13.2 Kruskal
 14. Arboles Binarios Ordenados
-15. Arboles Binarios Ordenados Equilibrados
+15. Arboles Binarios Ordenados Equilibrados AVL
 # [Teoria](https://github.com/Fatake/estructurasDatos/tree/master/Teoria)
