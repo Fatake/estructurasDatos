@@ -1,10 +1,10 @@
-from Arbol import *
+from ArbolAVL import *
 import os
 ##Main
-arbol = Arbol()
+arbol = ArbolAVL()
 os.system('clear')
 while True:
-	print ("\tPrograma Arbles AVL\n")
+	print ("\tPrograma Arboles AVL\n")
 	print ("<----------------------->\n")
 	print ("1) Agregar Datos")
 	print ("2) Eliminar Datos\n")
