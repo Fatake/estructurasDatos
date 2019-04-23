@@ -1,4 +1,5 @@
-package SillasFast;
+//package SillasFast;
+import java.util.Arrays;
 /**
  * Clase TablaHash
  * @author Fatake
@@ -6,6 +7,8 @@ package SillasFast;
 public class TablaHash{
 	//Atributos
 	private final Integer SIZE = 97;//Numero primo
+	//Arreglo de sillas
+	private Silla [Size] arreglo;
 	
 	/**
 	 * Constructor

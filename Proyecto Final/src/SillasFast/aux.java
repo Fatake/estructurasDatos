@@ -8,5 +8,4 @@ public class aux{
 			tabla.insertar(new Silla(i));
 		}
 	}
-
 }
