@@ -1,3 +1,8 @@
+package SillasFast;
+/**
+ * Clase TablaHash
+ * @author Fatake
+ */
 public class Lista{
 	private Nodo inicio;
 
@@ -28,23 +33,3 @@ public class Lista{
 		}
 	}
 }
-
-//Clase Provada Nodo
-private class Nodo{
-	//Atributos
-	protected Silla info;
-	protected Nodo sig;
-
-	/**
-	 * Constructor
-	 */
-	public Nodo (Silla dato){
-		info = dato;
-		sig = null;
-	}
-
-	public Silla getDato(){
-		return info;
-	}
-}
-
