@@ -22,7 +22,9 @@ public class Silla{
 	 * @param opinion 
 	 */
 	public Silla(String tipo, String material, String resistencia, String marca, String opinion){
-		this.ID = contador;
+                String aux;
+                aux = "9"+ material.length()+tipo.length()+contador;
+		this.ID = Integer.parseInt(aux);
 		this.tipo = tipo;
 		this.material = material;
 		this.marca = marca;

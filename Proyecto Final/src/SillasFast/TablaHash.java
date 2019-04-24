@@ -21,7 +21,7 @@ public class TablaHash{
 	private int hash(int ID){
 		int llave;
 		//Metodo de difivision
-		llave = (ID & 0x7fffffff) % 98;
+		llave = (ID & 0x7fffffff) % 97;
 		/* 
 		 * Dara residuos hasta antes del 97 osea 96
 		 * 0x7fffffff en mascaramiento con el numero 0111 1111 en binario para que 
