@@ -5,7 +5,7 @@ package SillasFast;
  */
 public class Silla{
 	//Atributos
-	protected int contador = 1;
+	static  int contador = 1;
 	private final  int ID;
 	private String tipo;
 	private String material;
@@ -22,7 +22,7 @@ public class Silla{
 	 * @param opinion 
 	 */
 	public Silla(String tipo, String material, String resistencia, String marca, String opinion){
-		this.ID = contador + material.length();
+		this.ID = contador;
 		this.tipo = tipo;
 		this.material = material;
 		this.marca = marca;

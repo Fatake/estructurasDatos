@@ -1,16 +1,21 @@
 package SillasFast;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author pace_
  */
 public class SillasFast extends javax.swing.JFrame {
-
+    //Atributo
+    private TablaHash almacen;
     /**
      * Creates new form SillasFast
      */
     public SillasFast() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        almacen = new TablaHash();
     }
 
     /**
@@ -22,53 +27,290 @@ public class SillasFast extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jTextField1 = new javax.swing.JTextField();
+        PanelPrincipal = new javax.swing.JPanel();
+        PanelDefault = new javax.swing.JPanel();
+        PanelBuscar = new javax.swing.JPanel();
+        PanelNuevo = new javax.swing.JPanel();
+        BtnCancelar = new javax.swing.JButton();
+        BtnAgregar = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        ComboBoxTipo = new javax.swing.JComboBox<>();
+        ComboBoxMarca = new javax.swing.JComboBox<>();
+        ComboBoxMaterial = new javax.swing.JComboBox<>();
+        ComboBoxResistencia = new javax.swing.JComboBox<>();
+        TextFileOpinion = new javax.swing.JTextField();
+        MenuPrincipal = new javax.swing.JMenuBar();
+        MenuArchivo = new javax.swing.JMenu();
+        menuArchivoImportar = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
+        MenuNuevo = new javax.swing.JMenu();
+        nuevo = new javax.swing.JMenuItem();
+        MenuBuscar = new javax.swing.JMenu();
+
+        jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
-        jMenu1.setText("Archivo");
+        PanelPrincipal.setLayout(new java.awt.CardLayout());
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setText("Importar");
-        jMenu1.add(jMenuItem1);
+        javax.swing.GroupLayout PanelDefaultLayout = new javax.swing.GroupLayout(PanelDefault);
+        PanelDefault.setLayout(PanelDefaultLayout);
+        PanelDefaultLayout.setHorizontalGroup(
+            PanelDefaultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 525, Short.MAX_VALUE)
+        );
+        PanelDefaultLayout.setVerticalGroup(
+            PanelDefaultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 410, Short.MAX_VALUE)
+        );
+
+        PanelPrincipal.add(PanelDefault, "card4");
+
+        javax.swing.GroupLayout PanelBuscarLayout = new javax.swing.GroupLayout(PanelBuscar);
+        PanelBuscar.setLayout(PanelBuscarLayout);
+        PanelBuscarLayout.setHorizontalGroup(
+            PanelBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 525, Short.MAX_VALUE)
+        );
+        PanelBuscarLayout.setVerticalGroup(
+            PanelBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 410, Short.MAX_VALUE)
+        );
+
+        PanelPrincipal.add(PanelBuscar, "card2");
+
+        BtnCancelar.setText("Cancelar");
+        BtnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCancelarActionPerformed(evt);
+            }
+        });
+
+        BtnAgregar.setText("Agregar");
+        BtnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAgregarActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Agregar Sillas");
+
+        jLabel1.setText("Tipo");
+
+        jLabel2.setText("Marca");
+
+        jLabel3.setText("Material");
+
+        jLabel4.setText("Resistencia");
+
+        jLabel6.setText("Opinion");
+
+        ComboBoxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Académica", "Moderna", "Gamer", "Oficina", "Infantiles", "Sillon" }));
+        ComboBoxTipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboBoxTipoActionPerformed(evt);
+            }
+        });
+
+        ComboBoxMarca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Amazon", "Fatake", "Office", "Ahorrera", "Gaming" }));
+
+        ComboBoxMaterial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Madera", "Poliester", "Platico Crudo", "Metal", "Algodon" }));
+
+        ComboBoxResistencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Mucha", "Normal", "Poca" }));
+
+        TextFileOpinion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextFileOpinionActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanelNuevoLayout = new javax.swing.GroupLayout(PanelNuevo);
+        PanelNuevo.setLayout(PanelNuevoLayout);
+        PanelNuevoLayout.setHorizontalGroup(
+            PanelNuevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelNuevoLayout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addGroup(PanelNuevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelNuevoLayout.createSequentialGroup()
+                        .addComponent(BtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(150, 150, 150)
+                        .addComponent(BtnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PanelNuevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelNuevoLayout.createSequentialGroup()
+                            .addGroup(PanelNuevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel1)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(35, 35, 35)
+                            .addGroup(PanelNuevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(ComboBoxTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ComboBoxMarca, 0, 141, Short.MAX_VALUE)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelNuevoLayout.createSequentialGroup()
+                            .addGroup(PanelNuevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel4)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(PanelNuevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(TextFileOpinion)
+                                .addComponent(ComboBoxResistencia, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ComboBoxMaterial, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addContainerGap(136, Short.MAX_VALUE))
+        );
+        PanelNuevoLayout.setVerticalGroup(
+            PanelNuevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelNuevoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addGap(40, 40, 40)
+                .addGroup(PanelNuevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(ComboBoxTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelNuevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(ComboBoxMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(PanelNuevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(ComboBoxMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PanelNuevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(ComboBoxResistencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PanelNuevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TextFileOpinion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 172, Short.MAX_VALUE)
+                .addGroup(PanelNuevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnCancelar)
+                    .addComponent(BtnAgregar))
+                .addGap(18, 18, 18))
+        );
+
+        PanelPrincipal.add(PanelNuevo, "card3");
+
+        MenuArchivo.setText("Archivo");
+
+        menuArchivoImportar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
+        menuArchivoImportar.setText("Importar");
+        MenuArchivo.add(menuArchivoImportar);
 
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem2.setText("Exportar");
-        jMenu1.add(jMenuItem2);
+        MenuArchivo.add(jMenuItem2);
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem3.setText("Guardar");
-        jMenu1.add(jMenuItem3);
+        MenuArchivo.add(jMenuItem3);
 
-        jMenuBar1.add(jMenu1);
+        MenuPrincipal.add(MenuArchivo);
 
-        jMenu2.setText("Nuevo");
-        jMenuBar1.add(jMenu2);
+        MenuNuevo.setText("Nuevo");
+        MenuNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuNuevoActionPerformed(evt);
+            }
+        });
 
-        jMenu3.setText("Buscar");
-        jMenuBar1.add(jMenu3);
+        nuevo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
+        nuevo.setText("Nuevo");
+        nuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nuevoActionPerformed(evt);
+            }
+        });
+        MenuNuevo.add(nuevo);
 
-        setJMenuBar(jMenuBar1);
+        MenuPrincipal.add(MenuNuevo);
+
+        MenuBuscar.setText("Buscar");
+        MenuPrincipal.add(MenuBuscar);
+
+        setJMenuBar(MenuPrincipal);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 663, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(PanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 433, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(PanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCancelarActionPerformed
+        // TODO add your handling code here:
+        PanelPrincipal.removeAll();
+        PanelPrincipal.add(PanelDefault);
+        PanelPrincipal.repaint();
+        PanelPrincipal.revalidate();
+    }//GEN-LAST:event_BtnCancelarActionPerformed
+
+    private void ComboBoxTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxTipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ComboBoxTipoActionPerformed
+
+    private void MenuNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuNuevoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MenuNuevoActionPerformed
+
+    private void nuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevoActionPerformed
+        // TODO add your handling code here:
+        PanelPrincipal.removeAll();
+        PanelPrincipal.add(PanelNuevo);
+        PanelPrincipal.repaint();
+        PanelPrincipal.revalidate();
+    }//GEN-LAST:event_nuevoActionPerformed
+
+    private void BtnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAgregarActionPerformed
+        String campoTipo, campoMaterial, campoMarca, campoResistencia, campoOpinion;
+        if(ComboBoxTipo.getSelectedIndex() == 0 
+                || ComboBoxMaterial.getSelectedIndex() == 0
+                || ComboBoxMarca.getSelectedIndex() == 0
+                || ComboBoxResistencia.getSelectedIndex() == 0
+                || TextFileOpinion.getText().length() == 0){
+            JOptionPane.showMessageDialog(null, "Hay campos vacíos", "ERROR 69", JOptionPane.ERROR_MESSAGE);
+        }else{
+            campoTipo = (String) ComboBoxTipo.getSelectedItem();
+            campoMaterial =(String) ComboBoxMaterial.getSelectedItem();
+            campoMarca = (String) ComboBoxMarca.getSelectedItem();
+            campoResistencia = (String) ComboBoxResistencia.getSelectedItem();
+            campoOpinion = TextFileOpinion.getText();
+            Silla nuevo = new Silla(campoTipo,campoMaterial,campoResistencia,campoMarca,campoOpinion);
+            almacen.insertar(nuevo);
+            String mensaje = "Silla nueva\n ID:" + nuevo.getID() + " ";
+            JOptionPane.showMessageDialog(null, mensaje, "Agregado!!! n.n", JOptionPane.INFORMATION_MESSAGE);
+            //
+            PanelPrincipal.removeAll();
+            PanelPrincipal.add(PanelDefault);
+            PanelPrincipal.repaint();
+            PanelPrincipal.revalidate();
+        }
+    }//GEN-LAST:event_BtnAgregarActionPerformed
+
+    private void TextFileOpinionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFileOpinionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFileOpinionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -106,12 +348,31 @@ public class SillasFast extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JButton BtnAgregar;
+    private javax.swing.JButton BtnCancelar;
+    private javax.swing.JComboBox<String> ComboBoxMarca;
+    private javax.swing.JComboBox<String> ComboBoxMaterial;
+    private javax.swing.JComboBox<String> ComboBoxResistencia;
+    private javax.swing.JComboBox<String> ComboBoxTipo;
+    private javax.swing.JMenu MenuArchivo;
+    private javax.swing.JMenu MenuBuscar;
+    private javax.swing.JMenu MenuNuevo;
+    private javax.swing.JMenuBar MenuPrincipal;
+    private javax.swing.JPanel PanelBuscar;
+    private javax.swing.JPanel PanelDefault;
+    private javax.swing.JPanel PanelNuevo;
+    private javax.swing.JPanel PanelPrincipal;
+    private javax.swing.JTextField TextFileOpinion;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JMenuItem menuArchivoImportar;
+    private javax.swing.JMenuItem nuevo;
     // End of variables declaration//GEN-END:variables
 }

@@ -2,8 +2,10 @@ package SillasFast;
 /**
  * Clase TablaHash
  * @author Fatake
+ /**
+ * Clase Nodo
+ * @author pace_
  */
-//Clase Provada Nodo
 public class Nodo{
 	//Atributos
 	protected Silla info;
@@ -11,10 +13,10 @@ public class Nodo{
 
 	/**
 	 * Constructor
-         * @param dato
+         * @param elemento
 	 */
-	public Nodo (Silla dato){
-		info = dato;
+	public Nodo (Silla elemento){
+		info = elemento;
 		sig = null;
 	}
 
