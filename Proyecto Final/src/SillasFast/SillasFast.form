@@ -247,6 +247,10 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TextAreaIDActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JTextField()"/>
+                <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="TextAreaID.addKeyListener(new KeyAdapter() {   //numero es el nombre del TextField&#xa;    public void keyTyped(KeyEvent e) {         //s&#xf3;lo cambialo por el que tienes&#xa;        char c = e.getKeyChar();&#xa;        if (!(Character.isDigit(c) ||&#xa;        (c == KeyEvent.VK_BACK_SPACE) ||&#xa;        (c == KeyEvent.VK_DELETE))) {&#xa;            getToolkit().beep();&#xa;            e.consume();&#xa;        }&#xa;    }&#xa;});"/>
+              </AuxValues>
             </Component>
             <Container class="javax.swing.JPanel" name="panelEncontrado">
 
