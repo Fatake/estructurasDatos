@@ -1,4 +1,7 @@
 package SillasFast;
+
+import javax.swing.JOptionPane;
+
 /**
  * Clase TablaHash
  * @author Fatake
@@ -11,7 +14,10 @@ public class TablaHash{
 	/**
 	 * Constructor
 	 */
-	public TablaHash(){ }
+	public TablaHash(){
+            for (int i=0; i<98 ;i++)
+                arreglo[i] = new Lista();
+        }
 
         /**
          * Metodo Generado de Hash
@@ -49,7 +55,11 @@ public class TablaHash{
          */
         public Silla buscar(int ID){
             int llave = hash(ID);
-            Silla aux = arreglo[llave].buscar(ID);
+            Silla aux = null;
+            Lista aux2 = arreglo[llave];
+            if(!aux2.getVacio()){
+                aux = aux2.buscar(ID);
+            }
             if (aux != null)
                 return aux;
             return null;

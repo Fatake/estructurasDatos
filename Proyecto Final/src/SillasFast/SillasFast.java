@@ -31,12 +31,22 @@ public class SillasFast extends javax.swing.JFrame {
         PanelPrincipal = new javax.swing.JPanel();
         PanelDefault = new javax.swing.JPanel();
         PanelBuscar = new javax.swing.JPanel();
-        BotonBuscar = new javax.swing.JButton();
-        BotonCancelar = new javax.swing.JButton();
+        botonBuscar = new javax.swing.JButton();
+        botonSalir = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
+        TextAreaID = new javax.swing.JTextField();
+        panelEncontrado = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        infoLabelTipo = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        infoLabelMarca = new javax.swing.JLabel();
+        infoLabelMaterial = new javax.swing.JLabel();
+        infoLabelResistencia = new javax.swing.JLabel();
+        infoLabelOpinion = new javax.swing.JLabel();
         PanelNuevo = new javax.swing.JPanel();
         BtnCancelar = new javax.swing.JButton();
         BtnAgregar = new javax.swing.JButton();
@@ -81,12 +91,17 @@ public class SillasFast extends javax.swing.JFrame {
 
         PanelPrincipal.add(PanelDefault, "card4");
 
-        BotonBuscar.setText("Buscar");
-
-        BotonCancelar.setText("Cancelar");
-        BotonCancelar.addActionListener(new java.awt.event.ActionListener() {
+        botonBuscar.setText("Buscar");
+        botonBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonCancelarActionPerformed(evt);
+                botonBuscarActionPerformed(evt);
+            }
+        });
+
+        botonSalir.setText("Salir");
+        botonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSalirActionPerformed(evt);
             }
         });
 
@@ -94,21 +109,79 @@ public class SillasFast extends javax.swing.JFrame {
 
         jLabel8.setText("Ingrese el ID:");
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        TextAreaID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                TextAreaIDActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        jLabel9.setText("Tipo");
+
+        infoLabelTipo.setText("----------------------------------------");
+
+        jLabel11.setText("Marca");
+
+        jLabel12.setText("Material");
+
+        jLabel13.setText("Resistencia");
+
+        jLabel14.setText("Opinion");
+
+        infoLabelMarca.setText("----------------------------------------");
+
+        infoLabelMaterial.setText("----------------------------------------");
+
+        infoLabelResistencia.setText("----------------------------------------");
+
+        infoLabelOpinion.setText("----------------------------------------");
+
+        javax.swing.GroupLayout panelEncontradoLayout = new javax.swing.GroupLayout(panelEncontrado);
+        panelEncontrado.setLayout(panelEncontradoLayout);
+        panelEncontradoLayout.setHorizontalGroup(
+            panelEncontradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelEncontradoLayout.createSequentialGroup()
+                .addGap(67, 67, 67)
+                .addGroup(panelEncontradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(panelEncontradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(infoLabelTipo, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+                    .addComponent(infoLabelMarca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(infoLabelMaterial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(infoLabelResistencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(infoLabelOpinion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 228, Short.MAX_VALUE)
+        panelEncontradoLayout.setVerticalGroup(
+            panelEncontradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelEncontradoLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(panelEncontradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(infoLabelTipo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelEncontradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(infoLabelMarca))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelEncontradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(infoLabelMaterial))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelEncontradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(infoLabelResistencia))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelEncontradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelEncontradoLayout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(infoLabelOpinion, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout PanelBuscarLayout = new javax.swing.GroupLayout(PanelBuscar);
@@ -118,21 +191,24 @@ public class SillasFast extends javax.swing.JFrame {
             .addGroup(PanelBuscarLayout.createSequentialGroup()
                 .addGap(78, 78, 78)
                 .addGroup(PanelBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(PanelBuscarLayout.createSequentialGroup()
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(225, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBuscarLayout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addGroup(PanelBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 204, Short.MAX_VALUE)
+                        .addComponent(botonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(71, 71, 71))
                     .addGroup(PanelBuscarLayout.createSequentialGroup()
-                        .addComponent(BotonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BotonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(71, 71, 71))
+                        .addGroup(PanelBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelBuscarLayout.createSequentialGroup()
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(TextAreaID, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(PanelBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelBuscarLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(panelEncontrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         PanelBuscarLayout.setVerticalGroup(
             PanelBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,14 +218,17 @@ public class SillasFast extends javax.swing.JFrame {
                 .addGap(51, 51, 51)
                 .addGroup(PanelBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel8)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                    .addComponent(TextAreaID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(222, 222, 222)
                 .addGroup(PanelBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BotonBuscar)
-                    .addComponent(BotonCancelar))
-                .addGap(24, 24, 24))
+                    .addComponent(botonSalir)
+                    .addComponent(botonBuscar))
+                .addGap(58, 58, 58))
+            .addGroup(PanelBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelBuscarLayout.createSequentialGroup()
+                    .addGap(0, 104, Short.MAX_VALUE)
+                    .addComponent(panelEncontrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 104, Short.MAX_VALUE)))
         );
 
         PanelPrincipal.add(PanelBuscar, "card2");
@@ -329,7 +408,7 @@ public class SillasFast extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(PanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         pack();
@@ -372,9 +451,10 @@ public class SillasFast extends javax.swing.JFrame {
             campoMarca = (String) ComboBoxMarca.getSelectedItem();
             campoResistencia = (String) ComboBoxResistencia.getSelectedItem();
             campoOpinion = TextFileOpinion.getText();
+            //Crear Objeto Silla
             Silla nuevo = new Silla(campoTipo,campoMaterial,campoResistencia,campoMarca,campoOpinion);
             almacen.insertar(nuevo);
-            String mensaje = "Silla nueva\n ID:" + nuevo.getID() + " ";
+            String mensaje = "Silla nueva\n ID: " + nuevo.getID() + " ";
             JOptionPane.showMessageDialog(null, mensaje, "Agregado!!! n.n", JOptionPane.INFORMATION_MESSAGE);
             //
             PanelPrincipal.removeAll();
@@ -388,16 +468,16 @@ public class SillasFast extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TextFileOpinionActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void TextAreaIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextAreaIDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_TextAreaIDActionPerformed
 
-    private void BotonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCancelarActionPerformed
+    private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
         PanelPrincipal.removeAll();
         PanelPrincipal.add(PanelDefault);
         PanelPrincipal.repaint();
         PanelPrincipal.revalidate();
-    }//GEN-LAST:event_BotonCancelarActionPerformed
+    }//GEN-LAST:event_botonSalirActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         PanelPrincipal.removeAll();
@@ -405,6 +485,32 @@ public class SillasFast extends javax.swing.JFrame {
         PanelPrincipal.repaint();
         PanelPrincipal.revalidate();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
+        int campoID;
+        Silla encontrado = null;
+        if(TextAreaID.getText().length() == 0)
+            JOptionPane.showMessageDialog(null, "No ha Igresado un ID", "ERROR 69", JOptionPane.ERROR_MESSAGE);
+        else{
+            JOptionPane.showMessageDialog(null, "entra", "ERROR 69", JOptionPane.ERROR_MESSAGE);
+            campoID = Integer.parseInt(TextAreaID.getText());
+            JOptionPane.showMessageDialog(null, "ID"+campoID, "ERROR 69", JOptionPane.ERROR_MESSAGE);
+            encontrado = almacen.buscar(campoID);
+            if(encontrado == null){
+                infoLabelTipo.setText("No se encontró Silla con el ID: "+campoID);
+                infoLabelMarca.setText("No se encontró Silla con el ID: "+campoID);
+                infoLabelMaterial.setText("No se encontró Silla con el ID: "+campoID);
+                infoLabelResistencia.setText("No se encontró Silla con el ID: "+campoID);
+                infoLabelOpinion.setText("No se encontró Silla con el ID: "+campoID);
+            }else{
+                infoLabelTipo.setText(encontrado.getTipo());
+                infoLabelMarca.setText(encontrado.getMarca());
+                infoLabelMaterial.setText(encontrado.getMaterial());
+                infoLabelResistencia.setText(encontrado.getResistencia());
+                infoLabelOpinion.setText(encontrado.getOpinion());
+            }
+        }
+    }//GEN-LAST:event_botonBuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -442,8 +548,6 @@ public class SillasFast extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotonBuscar;
-    private javax.swing.JButton BotonCancelar;
     private javax.swing.JButton BtnAgregar;
     private javax.swing.JButton BtnCancelar;
     private javax.swing.JComboBox<String> ComboBoxMarca;
@@ -458,8 +562,20 @@ public class SillasFast extends javax.swing.JFrame {
     private javax.swing.JPanel PanelDefault;
     private javax.swing.JPanel PanelNuevo;
     private javax.swing.JPanel PanelPrincipal;
+    private javax.swing.JTextField TextAreaID;
     private javax.swing.JTextField TextFileOpinion;
+    private javax.swing.JButton botonBuscar;
+    private javax.swing.JButton botonSalir;
+    private javax.swing.JLabel infoLabelMarca;
+    private javax.swing.JLabel infoLabelMaterial;
+    private javax.swing.JLabel infoLabelOpinion;
+    private javax.swing.JLabel infoLabelResistencia;
+    private javax.swing.JLabel infoLabelTipo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -467,13 +583,13 @@ public class SillasFast extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JMenuItem menuArchivoImportar;
     private javax.swing.JMenuItem nuevo;
+    private javax.swing.JPanel panelEncontrado;
     // End of variables declaration//GEN-END:variables
 }

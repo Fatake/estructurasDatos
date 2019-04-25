@@ -26,7 +26,6 @@ public class Lista{
         
         public Silla buscar(int ID){
 		Nodo temp = inicio;
-		
 		while (temp != null){
 			if(temp.getDato().getID() == ID)
                             return temp.getDato();

@@ -46,7 +46,11 @@ public class Silla{
 
 	/**
 	 * Gets y Sets
+         * @return 
 	 */
+        public int getID(){
+		return this.ID;
+	}
 	public String getTipo(){
 		return this.tipo;
 	}
@@ -55,9 +59,6 @@ public class Silla{
 	}
 	public String getMaterial(){
 		return this.material;
-	}
-	public int getID(){
-		return this.ID;
 	}
 	public String getResistencia(){
 		return this.resistencia;
