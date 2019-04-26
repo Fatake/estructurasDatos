@@ -505,9 +505,7 @@ public class SillasFast extends javax.swing.JFrame {
         if(TextAreaID.getText().length() == 0)
             JOptionPane.showMessageDialog(null, "No ha Igresado un ID", "ERROR 69", JOptionPane.ERROR_MESSAGE);
         else{
-            JOptionPane.showMessageDialog(null, "entra", "ERROR 69", JOptionPane.ERROR_MESSAGE);
             campoID = Integer.parseInt(TextAreaID.getText());
-            JOptionPane.showMessageDialog(null, "ID"+campoID, "ERROR 69", JOptionPane.ERROR_MESSAGE);
             encontrado = almacen.buscar(campoID);
             if(encontrado == null){
                 infoLabelTipo.setText("No se encontró Silla con el ID: "+campoID);
