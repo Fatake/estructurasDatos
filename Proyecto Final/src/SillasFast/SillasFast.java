@@ -64,10 +64,6 @@ public class SillasFast extends javax.swing.JFrame {
         ComboBoxResistencia = new javax.swing.JComboBox<>();
         TextFileOpinion = new javax.swing.JTextField();
         MenuPrincipal = new javax.swing.JMenuBar();
-        MenuArchivo = new javax.swing.JMenu();
-        menuArchivoImportar = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
         MenuNuevo = new javax.swing.JMenu();
         nuevo = new javax.swing.JMenuItem();
         MenuBuscar = new javax.swing.JMenu();
@@ -358,22 +354,6 @@ public class SillasFast extends javax.swing.JFrame {
 
     PanelPrincipal.add(PanelNuevo, "card3");
 
-    MenuArchivo.setText("Archivo");
-
-    menuArchivoImportar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
-    menuArchivoImportar.setText("Importar");
-    MenuArchivo.add(menuArchivoImportar);
-
-    jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
-    jMenuItem2.setText("Exportar");
-    MenuArchivo.add(jMenuItem2);
-
-    jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-    jMenuItem3.setText("Guardar");
-    MenuArchivo.add(jMenuItem3);
-
-    MenuPrincipal.add(MenuArchivo);
-
     MenuNuevo.setText("Nuevo");
     MenuNuevo.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -565,7 +545,6 @@ public class SillasFast extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> ComboBoxMaterial;
     private javax.swing.JComboBox<String> ComboBoxResistencia;
     private javax.swing.JComboBox<String> ComboBoxTipo;
-    private javax.swing.JMenu MenuArchivo;
     private javax.swing.JMenu MenuBuscar;
     private javax.swing.JMenu MenuNuevo;
     private javax.swing.JMenuBar MenuPrincipal;
@@ -596,10 +575,7 @@ public class SillasFast extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JMenuItem menuArchivoImportar;
     private javax.swing.JMenuItem nuevo;
     private javax.swing.JPanel panelEncontrado;
     // End of variables declaration//GEN-END:variables
