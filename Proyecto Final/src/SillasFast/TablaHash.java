@@ -15,15 +15,15 @@ public class TablaHash{
 	 * Constructor
 	 */
 	public TablaHash(){
-            for (int i=0; i<98 ;i++)
-                arreglo[i] = new Lista();
-        }
+        for (int i=0; i<98 ;i++)
+            arreglo[i] = new Lista();
+    }
 
-        /**
-         * Metodo Generado de Hash
-         * @param ID
-         * @return 
-         */
+    /**
+     * Metodo Generado de Hash
+     * @param ID
+     * @return 
+     */
 	private int hash(int ID){
 		int llave;
 		//Metodo de difivision
@@ -37,10 +37,10 @@ public class TablaHash{
 		return llave;
 	}
 
-        /**
-         * Metodo Insertar
-         * @param elemento 
-         */
+    /**
+     * Metodo Insertar
+     * @param elemento 
+     */
 	public void insertar(Silla elemento){
                  int llave = hash(elemento.getID());
                  Lista aux = new Lista();
@@ -48,20 +48,20 @@ public class TablaHash{
                  arreglo[llave] = aux;
 	}
 
-        /**
-         * Metodo Buscar
-         * @param ID
-         * @return 
-         */
-        public Silla buscar(int ID){
-            int llave = hash(ID);
-            Silla aux = null;
-            Lista aux2 = arreglo[llave];
-            if(!aux2.getVacio()){
-                aux = aux2.buscar(ID);
-            }
-            if (aux != null)
-                return aux;
-            return null;
+    /**
+     * Metodo Buscar
+     * @param ID
+     * @return 
+     */
+    public Silla buscar(int ID){
+        int llave = hash(ID);
+        Silla aux = null;
+        Lista aux2 = arreglo[llave];
+        if(!aux2.getVacio()){
+            aux = aux2.buscar(ID);
         }
+        if (aux != null)
+            return aux;
+        return null;
+    }
 }

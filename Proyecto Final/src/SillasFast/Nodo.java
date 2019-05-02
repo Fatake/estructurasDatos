@@ -13,7 +13,7 @@ public class Nodo{
 
 	/**
 	 * Constructor
-         * @param elemento
+     * @param elemento
 	 */
 	public Nodo (Silla elemento){
 		info = elemento;

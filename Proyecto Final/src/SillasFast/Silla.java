@@ -22,8 +22,8 @@ public class Silla{
 	 * @param opinion 
 	 */
 	public Silla(String tipo, String material, String resistencia, String marca, String opinion){
-                String aux;
-                aux = "9"+ material.length()+tipo.length()+contador;
+		String aux;
+		aux = "9"+ material.length()+tipo.length()+contador;
 		this.ID = Integer.parseInt(aux);
 		this.tipo = tipo;
 		this.material = material;
@@ -46,9 +46,9 @@ public class Silla{
 
 	/**
 	 * Gets y Sets
-         * @return 
+     * @return 
 	 */
-        public int getID(){
+    public int getID(){
 		return this.ID;
 	}
 	public String getTipo(){

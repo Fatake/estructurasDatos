@@ -7,11 +7,11 @@ public class Lista{
 	private Nodo inicio;
 
 	public Lista(){
-            inicio = null;
+        inicio = null;
 	}
 
 	public void inserta(Silla dato){
-                 Nodo aux = new Nodo(dato);
+        Nodo aux = new Nodo(dato);
 		aux.sig = null;
 
 		if (inicio == null)
@@ -24,19 +24,19 @@ public class Lista{
 		}
 	}
         
-        public Silla buscar(int ID){
+    public Silla buscar(int ID){
 		Nodo temp = inicio;
 		while (temp != null){
 			if(temp.getDato().getID() == ID)
-                            return temp.getDato();
+            	return temp.getDato();
 			temp = temp.sig;
 		}
-             return null;
+        return null;
 	}
         
-        public boolean getVacio(){
-            if (inicio == null)
-                return true;
-            return false;
-        }
+    public boolean getVacio(){
+		if (inicio == null)
+			return true;
+		return false;
+    }
 }
