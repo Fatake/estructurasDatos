@@ -1,7 +1,4 @@
 package SillasFast;
-
-import javax.swing.JOptionPane;
-
 /**
  * Clase TablaHash
  * @author Fatake
@@ -42,10 +39,8 @@ public class TablaHash{
      * @param elemento 
      */
 	public void insertar(Silla elemento){
-                 int llave = hash(elemento.getID());
-                 Lista aux = new Lista();
-                 aux.inserta(elemento);
-                 arreglo[llave] = aux;
+        int llave = hash(elemento.getID());
+        arreglo[llave].inserta(elemento);
 	}
 
     /**

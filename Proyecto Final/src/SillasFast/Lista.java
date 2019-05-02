@@ -11,7 +11,7 @@ public class Lista{
 	}
 
 	public void inserta(Silla dato){
-        Nodo aux = new Nodo(dato);
+    Nodo aux = new Nodo(dato);
 		aux.sig = null;
 
 		if (inicio == null)
@@ -24,7 +24,7 @@ public class Lista{
 		}
 	}
         
-    public Silla buscar(int ID){
+  public Silla buscar(int ID){
 		Nodo temp = inicio;
 		while (temp != null){
 			if(temp.getDato().getID() == ID)

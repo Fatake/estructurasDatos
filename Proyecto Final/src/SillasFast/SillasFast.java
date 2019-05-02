@@ -96,7 +96,7 @@ public class SillasFast extends javax.swing.JFrame {
             }
         });
 
-        botonSalir.setText("Salir");
+        botonSalir.setText("Cancelar");
         botonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonSalirActionPerformed(evt);

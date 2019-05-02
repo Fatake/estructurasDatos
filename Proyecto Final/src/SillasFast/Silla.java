@@ -45,7 +45,7 @@ public class Silla{
 	}
 
 	/**
-	 * Gets y Sets
+	 * Gets
      * @return 
 	 */
     public int getID(){
