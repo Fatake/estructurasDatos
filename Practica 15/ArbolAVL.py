@@ -1,81 +1,131 @@
 ﻿from NodoBinario import *
-class Arbol():
-	def __init__(self):
-		self.raiz = None
 
-	def imprimirEnOrden(self):
-		if self.raiz != None:
-			self.raiz.mostrarEnOrden()
-			return True
-		else:
-			print ("No a Creado un arbol")
-		return False
+class ArbolAVL():
+	"""
+	Clase Arbol AVL
+	AVL es un arbol binario ordenado balanceado y Equilibrado
+	"""
 
-	def imprimirPosOrden(self):
-		if self.raiz != None:
-			self.raiz.mostrarPosOrden()
-			return True
-		else:
-			print ("No a Creado un arbol")
-		return False
+	def ArbolAVL(self, dato):
+		self.__root = NodoBinario(dato)
 
-	def imprimirPreOrden(self):
-		if (self.raiz != None):
-			self.raiz.mostrarPreOrden()
-			return True
-		else:
-			print ("No a Creado un arbol")
-		return False
+	//Añadir un nodo al árbol, de forma ordenada
+	 boolean add(int inf) {
+	if ((root = add(inf, root)) != null) return true;
+	return false;
+	}
 
-	def __insertarRec(self,dato,raiz):
-		#Compara con Sub arboles
-		if (raiz == None): #No existe el arbol
-			raiz = NodoBinario(dato)
-		##Para Arboles Ordenados
-		elif (dato < raiz.getDato()):
-			raiz.setLeft(self.__insertarRec(dato,raiz.getLeft()))
-		elif (dato > raiz.getDato()):
-			raiz.setRight(self.__insertarRec(dato,raiz.getRight()))
-		return raiz
+	//Añadir un nodo al árbol (recursividad)
+	private Node add(int inf, Node root) {
+	if (root == null) return (root = new Node(inf));
+	else if (inf < root.getInf()) root.setLeft(add(inf, root.getLeft()));
+	else if (inf > root.getInf()) root.setRight(add(inf, root.getRight()));
+	else if (inf == root.getInf()) {root.addCant(); return root;}
+	root.updateFB(inf); //Actualiza Factor de Equilibrio
 
-	def insertar(self,dato):
-		if (self.raiz == None):
-			self.raiz = NodoBinario(dato)
-		elif (dato < self.raiz.getDato()):
-			self.raiz.setLeft(self.__insertarRec(dato,self.raiz.getLeft()))
-		elif (dato > self.raiz.getDato()):
-			self.raiz.setRight(self.__insertarRec(dato,self.raiz.getRight()))
+	//Equiilibrio
+	if (root.getFB() == -2) {
+	if (root.getLeft().getFB() == 1) root.setLeft(LeftSimpleRotation(root.getLeft()));
+	root = RightSimpleRotation(root);
+	}
+	else if (root.getFB() == 2) {
+	if (root.getRight().getFB() == -1) root.setRight(RightSimpleRotation(root.getRight()));
+	root = LeftSimpleRotation(root);
+	}
+	return root;
+	}
 
-	def __buscar(self,numero):
-		return  self.__buscarRec(self.raiz,numero)
+	//Rotación Derecha Simple
+	private Node RightSimpleRotation(Node root) {
+	Node aux = root.getLeft();
+	root.setLeft(aux.getRight());
+	aux.setRight(root);
+	root.updateFB();
+	aux.updateFB();
+	//System.out.println("Rotacion Derecha");
+	return aux;
+	}
 
-	def __buscarRec(self,raiz,numero):
-		if (raiz.getDato() == numero):
-			return raiz
-		else:
-			if(raiz.getDato() < numero):
-				if(raiz.getRight() != None):
-					return self.__buscarRec(raiz.getRight(),numero)
-			if(raiz.getDato() > numero):
-				if(raiz.getLeft() != None):
-					return self.__buscarRec(raiz.getLeft(),numero)
-		return None
+	//Rotación Izquierda Simple
+	private Node LeftSimpleRotation(Node root) {
+	Node aux = root.getRight();
+	root.setRight(aux.getLeft());
+	aux.setLeft(root);
+	root.updateFB();
+	aux.updateFB();
+	//System.out.println("Rotacion Izquierda");
+	return aux;
+	}
 
-	def eliminar(self,numero):
-		if(self.raiz == None):
-			print ("No Existe un Arbol Creado")
+	//Eliminar un nodo del árbol
+	 boolean delete(int inf) {
+	if (!contains(inf)) return false;
 
-		elif(self.raiz.getRight() == None and self.raiz.getLeft() == None ):
-			if(self.raiz.getDato() == numero):
-				print("Nodo Eliminado\n")
-				self.raiz = None
-			else:
-				print("No existe ese valor -_-\n")
+	root = delete(inf, root);
+	return true;
+	}
 
-		else:
-			if(self.__buscar(numero) != None):
-				self.raiz.delete(numero)
-			else:
-				print("No existe ese valor -_-\n")
+	//Eliminar (recursividad)
+	private Node delete(int inf, Node root) {
+	if (inf < root.getInf() && root.getLeft() != null) root.setLeft(delete(inf, root.getLeft()));
+	else if (inf > root.getInf() && root.getRight() != null) root.setRight(delete(inf, root.getRight()));
+	else if (inf == root.getInf()) {
+	if (root.getLeft() == null && root.getRight() == null) root = null; //Sin hijos
+	else if (root.getLeft() != null && root.getRight() != null) { //Dos hijos
+	//Búsqueda del menor de los mayores
+	Node aux = root.getRight();
+	while (aux.getLeft() != null) aux = aux.getLeft();
 
+	//Elimina el ciclo creado
+	Node aux2 = root.getRight();
+	do {
+	  if (aux2.getLeft() == aux) aux2.setLeft(aux.getRight());
+	  aux2 = aux2.getLeft();
+	} while (aux2 != null);
+
+	aux.setLeft(root.getLeft());
+	if (aux != root.getRight()) aux.setRight(root.getRight());
+	root = aux;
+	}
+	else { //Un hijo
+	if (root.getLeft() != null) root = root.getLeft();
+	else root = root.getRight();
+	}
+	}
+	return root;
+	}
+
+	//Existencia de un nodo (retorna verdader o falso)
+	 boolean contains(int inf) {
+	return (binarySearch(inf) != null);
+	}
+
+	//Búsqueda Binaria (retorna nodo)
+	 Node binarySearch(int inf) {
+	return binarySearch(inf, root);
+	}
+
+	//Búsqueda Binaria (recursividad)
+	private Node binarySearch(int inf, Node root) {
+	if (root == null) return null;
+	else if (inf < root.getInf()) return binarySearch(inf, root.getLeft());
+	else if (inf > root.getInf()) return binarySearch(inf, root.getRight());
+	return root;
+	}
+
+	//Imprime todos los nodos del árbol
+	 String listTreePreOrder() {
+	if (root == null) return "\nEmpty tree.";
+	return (root.listPreOrder().toString() + "\n");
+	}
+
+	 String listTreeInOrder() {
+	if (root == null) return "\nEmpty tree.";
+	return (root.listInOrder().toString() + "\n");
+	}
+
+	 String listTreePostOrder() {
+	if (root == null) return "\nEmpty tree.";
+	return (root.listPostOrder().toString() + "\n");
+	}
 
