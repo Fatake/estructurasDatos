@@ -7,14 +7,14 @@ from collections import deque
 
 ##Imprime Matriz de Relacion
 def printMatriz():
-	print matriz
+	print (matriz)
 	for i in matriz:
 		for j in i:
-			print j,
-		print
+			print (j),
+		print("\n")
 
 def recorridoAnchura():
-	print " \tRecorrido Por Anchura\n\n"
+	print (" \tRecorrido Por Anchura\n\n")
 	#Lista de estado inicicializa en espera
 	# Equivalencias
 	# -1 = espera
@@ -33,18 +33,18 @@ def recorridoAnchura():
 			cola.append(str(i+1))
 			estado[i] = 0 #Listo
 			while(cola != aux):
-				print cola.popleft()+"-",
+				print (cola.popleft()+"-"),
 				estado[i] = 1
 				for j in range(nodos):
 					if (matriz[i][j] == 1):#Si existe la relacion
 						if (estado[j] == -1):#Si esta en espera
 							cola.append(str(j+1))
 							estado[j] = 0 #Listo
-	print 
+	print ("\n")
 
 
 def recorridoProfundidad():
-	print "\t Recorrido por Profundidad\n\n"
+	print ("\t Recorrido por Profundidad\n\n")
 	#Lista de estado inicicializa en espera
 	# Equivalencias
 	# -1 = espera
@@ -69,7 +69,7 @@ def recorridoProfundidad():
 				#print pila
 				node = int(pila.pop())-1
 				if(estado[node] != 1):
-					print str(node + 1)+"-",
+					print (str(node + 1)+"-"),
 					estado[node] = 1 #Estado a procesado
 					
 				for j in range(nodos):
@@ -77,7 +77,7 @@ def recorridoProfundidad():
 						if (estado[j] == -1 or estado[j] == 0):#Si esta en espera o listo
 							pila.append(str(j+1))
 							estado[j] = 0 #Listo
-	print "\n"
+	print ("\n")
 
 ##
 #Permite modificar la matriz de relacion
@@ -85,8 +85,8 @@ def recorridoProfundidad():
 def cambiaRelacion():
 	for i in range(nodos):
 		for j in range(nodos):
-			print "Existe relacion entre el nodo "+str(i+1)+" y "+str(j+1)
-			print "1) si y 0) no" 
+			print ("Existe relacion entre el nodo "+str(i+1)+" y "+str(j+1))
+			print ("1) si y 0) no") 
 			matriz[i][j] = input("->")
 			os.system('clear')
 			
@@ -95,7 +95,7 @@ def cambiaRelacion():
 #
 def camino():
 	while True:
-		print "\tPrograma Buscador de Caminos Con Algoritmos\n"
+		print ("\tPrograma Buscador de Caminos Con Algoritmos\n")
 		print ("<------------------------------>")
 		print ("Opciones:\n")
 		print ("1) Mostrar Relaciones Por Anchura")
@@ -129,12 +129,12 @@ def camino():
 ##
 os.system('clear')
 while True:
-	print "\tPrograma Buscador de Caminos Con Algoritmos\n"
-	print "Ingrese la cantidad de Vertices del grafo"
-	nodos = input("->")
+	print ("\tPrograma Buscador de Caminos Con Algoritmos\n")
+	print ( "Ingrese la cantidad de Vertices del grafo")
+	nodos = int(input("->"))
 	os.system('clear')
-	if nodos <=0:
-		print "No pueden Existir Vertices Negativos"
+	if nodos <= 0:
+		print ("No pueden Existir Vertices Negativos")
 	else:
 		break
 
@@ -153,8 +153,8 @@ for i in range(nodos):
 ##
 for i in range(nodos):
 	for j in range(nodos):
-		print "Existe relacion entre el Vertice "+str(i+1)+" con "+str(j+1)
-		print "1) si y 0) no" 
+		print ("Existe relacion entre el Vertice "+str(i+1)+" con "+str(j+1))
+		print ("1) si y 0) no" )
 		matriz[i][j] = input("->")
 		os.system('clear')
 
