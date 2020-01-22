@@ -4,39 +4,39 @@ import os
 ##
 def printMatriz():
 	#imprime la matriz
-	print matriz
+	print (matriz)
 	for i in matriz:
 		for j in i:
-			print j,
-		print
+			print (j),
+		print("\n")
 
 def buscaCamino():
-	print "\t Buscador de caminos"
+	print ("\t Buscador de caminos")
 	while True:
-		print "Ingrese el Vertice Inicial"
+		print ("Ingrese el Vertice Inicial")
 		nodoInicial = input("->")
 		os.system("clear")
 		#Comprueba que no se salga del rango de las aristas permitidas
 		if nodoInicial > nodos or nodoInicial < 1:
-			print "No existe El Vertice "+str(nodoInicial)
+			print ("No existe El Vertice "+str(nodoInicial))
 		else:
 			break
 	while True:
-		print "Ingrese el Vertice Final"
+		print ("Ingrese el Vertice Final")
 		nodoFinal = input("->")
 		os.system("clear")
 		#Comprueba que no se salga del rango de las aristas permitidas
 		if nodoFinal > nodos or nodoFinal < 1:
-			print "No existe El Vertice "+str(nodoFinal)
+			print ("No existe El Vertice "+str(nodoFinal))
 		else:
 			break
 
 	nodoInicial = nodoInicial - 1
 	nodoFinal = nodoFinal -1 
-	print "Aristas a buscar "+str(nodoInicial+1)+" y "+str(nodoFinal+1)
+	print ("Aristas a buscar "+str(nodoInicial+1)+" y "+str(nodoFinal+1))
 	##Caso 1 si existe camino de 1 arista
 	if matriz[nodoInicial][nodoFinal] == 1:
-		print "Si existe un cambino"
+		print ("Si existe un cambino")
 		return True;
 
 	##
@@ -59,7 +59,7 @@ def buscaCamino():
 					aux3[i][k] = temp
 					
 		if aux3[nodoInicial][nodoFinal] == 1:
-			print "Si existe un cambino"
+			print ("Si existe un cambino")
 			return True;
 		aux = aux2
 		aux2 = aux3
@@ -70,8 +70,8 @@ def buscaCamino():
 def cambiaRelacion():
 	for i in range(nodos):
 		for j in range(nodos):
-			print "Existe relacion entre el nodo "+str(i+1)+" y "+str(j+1)
-			print "1) si y 0) no" 
+			print ("Existe relacion entre el nodo "+str(i+1)+" y "+str(j+1))
+			print ("1) si y 0) no" )
 			matriz[i][j] = input("->")
 			os.system('clear')
 
@@ -80,7 +80,7 @@ def cambiaRelacion():
 #
 def camino():
 	while True:
-		print "\tPrograma Buscador de Caminos\n"
+		print ("\tPrograma Buscador de Caminos\n")
 		print ("Opciones\n")
 		print ("1) Existe Camino de a-b?")
 		print ("2) Matriz de relacion")
@@ -106,12 +106,12 @@ def camino():
 ##
 os.system('clear')
 while True:
-	print "\tPrograma Buscador de Caminos\n"
-	print "Ingrese la cantidad de Vertices del grafo"
+	print ("\tPrograma Buscador de Caminos\n")
+	print ("Ingrese la cantidad de Vertices del grafo")
 	nodos = input("->")
 	os.system('clear')
 	if nodos <=0:
-		print "No pueden Existir Vertices Negativos"
+		print ("No pueden Existir Vertices Negativos")
 	else:
 		break
 #Una matriz en pyton es una lista de listas
@@ -125,8 +125,8 @@ for i in range(nodos):
 ##
 for i in range(nodos):
 	for j in range(nodos):
-		print "Existe relacion entre el Vertice "+str(i+1)+" con "+str(j+1)
-		print "1) si y 0) no" 
+		print ("Existe relacion entre el Vertice "+str(i+1)+" con "+str(j+1))
+		print ("1) si y 0) no" )
 		matriz[i][j] = input("->")
 		if matriz[i][j] > 1:
 			matriz[i][j] = 1
