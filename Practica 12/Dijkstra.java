@@ -5,7 +5,7 @@ public class Dijkstra {
     int[][] dijkstra;  // Matriz de distancias entre nodos
     String  rutaMasCorta;                           // distancia más corta
     int     longitudMasCorta = Integer.MAX_VALUE;   // ruta más corta
-    List<Nodo>  listos=null;                        // nodos revisados dijkstra
+    List<Nodo>  listos = null;                        // nodos revisados dijkstra
  
     // construye el dijkstra con la serie de identificadores de nodo en una cadena
     Dijkstra(String serieNodos) {
@@ -148,7 +148,7 @@ public class Dijkstra {
         
         String vertices = "";
         
-        for (int i = 0; i<nV; i++){            
+        for (int i = 0; i < nV; i++){            
             vertices = vertices + (i+1);
         }
                
